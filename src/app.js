@@ -5,11 +5,11 @@ import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import {addExpense,editExpense,removeExpense} from './actions/expenses';
 import {setTextFilter,sortByDate,sortByAmount,setStartDate,setEndDate} from './actions/filters';
-import 'react-dates/initialize';
 import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import 'react-dates/initialize';
 
 const store = configureStore();
 
@@ -19,11 +19,10 @@ const store = configureStore();
 // store.dispatch(setTextFilter('Bill'));
 // store.dispatch(sortByAmount());
 
+// const state = store.getState()
+// console.log(getVisibleExpenses(state.expenses, state.filters));
 
-const state = store.getState()
-console.log(getVisibleExpenses(state.expenses, state.filters));
-
-
+console.log("Hello app.js")
 const jsx = (
     <Provider store={store}>
         <AppRouter/>
